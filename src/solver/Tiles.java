@@ -1,10 +1,14 @@
+package solver;
+
+
+
 public class Tiles {
-    public String suit;
-    public int value;
+    private Suits suit;
+    private int value;
 
     Tiles(String suit, int value) {
-        if (Suits.contains(suit) && !Honors.contains(suit)) {
-            this.suit = suit;
+        if (Suits.isValidSuit(suit)  && !Honors.isValidHonor(suit)) {
+            this.suit = Suits.valueOf(suit);
         }
         if (value >= 1 && value <= 9) {
             this.value = value;
@@ -12,33 +16,29 @@ public class Tiles {
     }
 
     Tiles(String suit) {
-        if (Honors.contains(suit)) {
-            this.suit = suit;
+        if (Honors.isValidHonor(suit)) {
+            this.suit = Suits.valueOf(suit);
         }
     }
 
+    void getTile() {
+        if (value > 0) {
+            System.out.println(value + " of " + suit);
+        } else {
+            System.out.println(suit);
+        }
+        
+    }
+
+    Suits getSuit() {
+        return suit;
+    }
+
+    int getValue() {
+        return value;
+    }
 
 }
 
-enum Suits {
-    Manzu,
-    Souzu,
-    Pinzu,
-    East,
-    South,
-    West, 
-    North,
-    Haku,
-    Hatsu,
-    Chun
-}
 
-enum Honors {
-    East,
-    South,
-    West,
-    North,
-    Haku,
-    Hatsu,
-    Chun
-}
+

@@ -1,5 +1,7 @@
+package solver;
+
 public enum Suits {
-    Manzu, Souzu, Pinzu, East, South, West, North, Haku, Hatsu, Chun;
+    MANZU, SOUZU, PINZU, EAST, SOUTH, WEST, NORTH, HAKU, HATSU, CHUN;
 
     public static boolean isValidSuit(String name) {
         try {

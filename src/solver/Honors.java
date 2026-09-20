@@ -1,5 +1,7 @@
+package solver;
+
 public enum Honors {
-    East, South, West, North, Haku, Hatsu, Chun;
+    EAST, SOUTH, WEST, NORTH, HAKU, HATSU, CHUN;
 
     public static boolean isValidHonor(String name) {
         try {
