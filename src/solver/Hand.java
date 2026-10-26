@@ -2,16 +2,23 @@ package solver;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.InputMismatchException;
 
 
-public class Hand {
-    ArrayList<Tiles> hand = new ArrayList<Tiles>();
+public class Hand{
+    ArrayList<Tiles> hand = new ArrayList<>();
 
     void addTile(String suit, int Value) {
-        Tiles tile = new Tiles(suit, Value);
-        if (hand.size() < 18) {
-            hand.add(tile);
-        };
+        try {
+            Tiles tile = new Tiles(suit, Value);
+            if (hand.size() < 18) {
+                hand.add(tile);
+            }
+        } catch(InputMismatchException e) {
+            System.err.println("Input Mismatch: " + e.getMessage());
+        }
+        
+        
     }
 
     void addTile(String honor) {
@@ -36,7 +43,7 @@ public class Hand {
     }
 
     ArrayList<Tiles> sort() {
-        ArrayList<Tiles> sortedHand = new ArrayList<Tiles>();
+        ArrayList<Tiles> sortedHand = new ArrayList<>();
         hand.sort(Comparator.comparing(Tiles::getSuit).thenComparingInt(Tiles::getValue));
         return sortedHand;
     }

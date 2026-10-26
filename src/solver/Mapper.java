@@ -4,8 +4,8 @@ import java.util.HashMap;
 
 
 public class Mapper {
-    HashMap<Tiles, Integer> tileCount = new HashMap<>();
-    Hand hand;
+    private HashMap<Tiles, Integer> tileCount = new HashMap<>();
+    private final Hand hand;
 
     Mapper(Hand hand) {
         this.hand = hand;

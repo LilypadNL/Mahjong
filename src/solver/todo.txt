@@ -1,0 +1,12 @@
+
+
+
+Working on:
+Figure out how I want to handle Kans
+Complete the Mapper
+Solver
+
+
+Things for the future:
+
+Completed: 
